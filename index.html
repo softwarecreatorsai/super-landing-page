@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI יועצים - ייעוץ בתחום הבינה המלאכותית לעסקים</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts - Heebo for Hebrew -->
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Heebo', sans-serif;
+    }
+
+    @keyframes blob {
+      0% {
+        transform: translate(0px, 0px) scale(1);
+      }
+      33% {
+        transform: translate(30px, -50px) scale(1.1);
+      }
+      66% {
+        transform: translate(-20px, 20px) scale(0.9);
+      }
+      100% {
+        transform: translate(0px, 0px) scale(1);
+      }
+    }
+
+    .animate-blob {
+      animation: blob 7s infinite;
+    }
+
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+
+    .animation-delay-4000 {
+      animation-delay: 4s;
+    }
+
+    .animate-slide-up {
+      animation: slide-up 0.7s ease forwards;
+    }
+
+    @keyframes slide-up {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .transition-all {
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 300ms;
+    }
+
+    .ease-apple {
+      transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900 transition-colors duration-300">
+  <!-- Header -->
+  <header class="fixed w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800">
+    <div class="container mx-auto px-4 md:px-6 flex items-center justify-between h-16">
+      <a href="#" class="flex items-center gap-2">
+        <i class="fas fa-robot text-blue-600 dark:text-blue-400 text-xl"></i>
+        <span class="text-xl font-semibold">
+          AI<span class="text-blue-600 dark:text-blue-400">יועצים</span>
+        </span>
+      </a>
+
+      <div class="hidden md:flex items-center space-x-0 space-x-reverse rtl:space-x-reverse">
+        <nav class="flex items-center ml-6">
+          <a href="#services" class="px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">שירותים</a>
+          <a href="#why-us" class="px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">למה אנחנו</a>
+          <a href="#process" class="px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">תהליך העבודה</a>
+          <a href="#testimonials" class="px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">המלצות</a>
+          <a href="#contact" class="px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">צור קשר</a>
+        </nav>
+
+        <button class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600">
+          תיאום פגישת ייעוץ
+        </button>
+
+        <button class="ml-4 flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400" id="theme-toggle">
+          <i class="fas fa-moon dark:hidden"></i>
+          <i class="fas fa-sun hidden dark:inline"></i>
+        </button>
+      </div>
+
+      <button class="md:hidden flex items-center justify-center w-10 h-10 text-gray-700 dark:text-gray-300" id="mobile-menu-button">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden hidden bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800" id="mobile-menu">
+      <div class="container mx-auto px-4 py-3">
+        <nav class="flex flex-col space-y-3">
+          <a href="#services" class="px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">שירותים</a>
+          <a href="#why-us" class="px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">למה אנחנו</a>
+          <a href="#process" class="px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">תהליך העבודה</a>
+          <a href="#testimonials" class="px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">המלצות</a>
+          <a href="#contact" class="px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">צור קשר</a>
+        </nav>
+        <div class="mt-4 mb-2">
+          <button class="w-full inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600">
+            תיאום פגישת ייעוץ
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <!-- Gradient orbs -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-6xl max-h-6xl">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/20 dark:bg-blue-500/20 rounded-full blur-3xl opacity-60 animate-blob"></div>
+      <div class="absolute top-0 left-0 w-96 h-96 bg-gray-600/20 dark:bg-gray-500/20 rounded-full blur-3xl opacity-60 animate-blob animation-delay-2000"></div>
+      <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-gray-400/20 dark:bg-gray-300/20 rounded-full blur-3xl opacity-60 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+      <div class="flex flex-col items-center text-center space-y-8">
+        <div class="space-y-6 max-w-3xl animate-slide-up">
+          <div class="inline-block mb-4">
+            <div class="flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/40 rounded-full text-sm font-medium text-blue-800 dark:text-blue-300 border border-blue-200 dark:border-blue-800/50">
+              <i class="fas fa-lightbulb text-sm"></i>
+              <span>מעצימים עסקים באמצעות בינה מלאכותית</span>
+            </div>
+          </div>
+
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300">
+            הפוך את ה-<span class="text-blue-600 dark:text-blue-400">AI</span> ליתרון התחרותי שלך
+          </h1>
+          <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            אנו מלווים עסקים בהטמעת פתרונות בינה מלאכותית, מייעול תהליכי עבודה ועד פיתוח מערכות AI מתקדמות לצמיחה ורווחיות.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4 animate-slide-up">
+          <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-blue-600 to-gray-600 hover:from-blue-700 hover:to-gray-700 dark:from-blue-500 dark:to-gray-500 shadow-md hover:shadow-lg transition-all">
+            דבר איתנו
+            <i class="fas fa-arrow-left mr-2"></i>
+          </a>
+          <a href="#services" class="inline-flex items-center justify-center px-8 py-3 border border-blue-200 dark:border-blue-800/50 dark:text-gray-200 text-base font-medium rounded-md bg-transparent hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all">
+            השירותים שלנו
+          </a>
+        </div>
+
+        <div class="relative w-full max-w-5xl mx-auto mt-10 animate-slide-up">
+          <div class="aspect-[16/9] bg-gradient-to-br from-blue-100 to-gray-100 dark:from-blue-900/30 dark:to-gray-900/30 overflow-hidden rounded-xl border border-blue-200/40 dark:border-blue-700/40 shadow-2xl">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-4/5 h-4/5 bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                <div class="h-10 bg-gray-100 dark:bg-gray-700 flex items-center px-4">
+                  <div class="flex space-x-2 space-x-reverse rtl:space-x-reverse">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                  </div>
+                  <div class="mr-4 text-xs text-gray-500 dark:text-gray-400">
+                    AI Dashboard
+                  </div>
+                </div>
+                <div class="p-4 grid grid-cols-3 gap-4">
+                  <div class="col-span-1">
+                    <div class="h-8 w-full bg-blue-200 dark:bg-blue-800/40 rounded mb-4"></div>
+                    <div class="h-4 w-5/6 bg-gray-200 dark:bg-gray-700 rounded mb-2"></div>
+                    <div class="h-4 w-4/6 bg-gray-200 dark:bg-gray-700 rounded mb-6"></div>
+
+                    <div class="space-y-2">
+                      <div class="h-8 w-full bg-gray-100 dark:bg-gray-900/20 rounded-md flex items-center px-3">
+                        <i class="fas fa-chart-bar text-blue-600 dark:text-blue-400 mr-2"></i>
+                        <div class="h-3 w-24 bg-gray-200 dark:bg-gray-700 rounded"></div>
+                      </div>
+                      <div class="h-8 w-full bg-gray-100 dark:bg-gray-900/20 rounded-md flex items-center px-3">
+                        <i class="fas fa-robot text-blue-600 dark:text-blue-400 mr-2"></i>
+                        <div class="h-3 w-16 bg-gray-200 dark:bg-gray-700 rounded"></div>
+                      </div>
+                      <div class="h-8 w-full bg-blue-200 dark:bg-blue-800/40 rounded-md flex items-center px-3">
+                        <i class="fas fa-brain text-blue-600 dark:text-blue-400 mr-2"></i>
+                        <div class="h-3 w-20 bg-gray-200 dark:bg-gray-700 rounded"></div>
+                      </div>
+                      <div class="h-8 w-full bg-gray-100 dark:bg-gray-900/20 rounded-md flex items-center px-3">
+                        <i class="fas fa-cogs text-blue-600 dark:text-blue-400 mr-2"></i>
+                        <div class="h-3 w-12 bg-gray-200 dark:bg-gray-700 rounded"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-span-2">
+                    <div class="h-8 w-4/6 bg-gray-200 dark:bg-gray-800/40 rounded mb-4"></div>
+                    <div class="grid grid-cols-2 gap-4">
+                      <div class="h-36 bg-gray-100 dark:bg-gray-900 rounded-lg p-3">
+                        <div class="h-5 w-1/2 bg-gray-200 dark:bg-gray-800/40 rounded mb-2"></div>
+                        <div class="h-24 relative">
+                          <div class="absolute bottom-0 left-0 w-full flex items-end justify-between px-2">
+                            <div class="w-4 bg-gray-300 dark:bg-gray-700 rounded-t h-8"></div>
+                            <div class="w-4 bg-gray-400 dark:bg-gray-600 rounded-t h-16"></div>
+                            <div class="w-4 bg-gray-500 dark:bg-gray-500 rounded-t h-12"></div>
+                            <div class="w-4 bg-gray-600 dark:bg-gray-400 rounded-t h-20"></div>
+                            <div class="w-4 bg-gray-700 dark:bg-gray-300 rounded-t h-14"></div>
+                            <div class="w-4 bg-gray-800 dark:bg-gray-200 rounded-t h-10"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="h-36 bg-gray-100 dark:bg-gray-900 rounded-lg p-3">
+                        <div class="h-5 w-1/2 bg-blue-200 dark:bg-blue-800/40 rounded mb-2"></div>
+                        <div class="h-24 flex items-center justify-center">
+                          <div class="w-24 h-24 rounded-full bg-white dark:bg-gray-800 border-8 border-blue-200 dark:border-blue-800/40 relative flex items-center justify-center">
+                            <div class="text-lg font-bold text-blue-600 dark:text-blue-400">85%</div>
+                            <div class="absolute top-0 right-0 w-6 h-6 rounded-full bg-green-400 border-2 border-white dark:border-gray-800"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="h-36 bg-gray-100 dark:bg-gray-900 rounded-lg p-3">
+                        <div class="h-5 w-1/2 bg-blue-200 dark:bg-blue-800/40 rounded mb-2"></div>
+                        <div class="grid grid-cols-5 gap-1 h-24">
+                          <div class="flex flex-col items-center">
+                            <div class="w-full h-20 flex items-end">
+                              <div class="w-full bg-gradient-to-t from-blue-600 to-gray-600 dark:from-blue-500 dark:to-gray-500 rounded-t h-10"></div>
+                            </div>
+                            <div class="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded mt-1"></div>
+                          </div>
+                          <div class="flex flex-col items-center">
+                            <div class="w-full h-20 flex items-end">
+                              <div class="w-full bg-gradient-to-t from-blue-600 to-gray-600 dark:from-blue-500 dark:to-gray-500 rounded-t h-14"></div>
+                            </div>
+                            <div class="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded mt-1"></div>
+                          </div>
+                          <div class="flex flex-col items-center">
+                            <div class="w-full h-20 flex items-end">
+                              <div class="w-full bg-gradient-to-t from-blue-600 to-gray-600 dark:from-blue-500 dark:to-gray-500 rounded-t h-16"></div>
+                            </div>
+                            <div class="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded mt-1"></div>
+                          </div>
+                          <div class="flex flex-col items-center">
+                            <div class="w-full h-20 flex items-end">
+                              <div class="w-full bg-gradient-to-t from-blue-600 to-gray-600 dark:from-blue-500 dark:to-gray-500 rounded-t h-12"></div>
+                            </div>
+                            <div class="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded mt-1"></div>
+                          </div>
+                          <div class="flex flex-col items-center">
+                            <div class="w-full h-20 flex items-end">
+                              <div class="w-full bg-gradient-to-t from-blue-600 to-gray-600 dark:from-blue-500 dark:to-gray-500 rounded-t h-8"></div>
+                            </div>
+                            <div class="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded mt-1"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="h-36 bg-gray-100 dark:bg-gray-900 rounded-lg p-3">
+                        <div class="h-5 w-1/2 bg-gray-200 dark:bg-gray-800/40 rounded mb-2"></div>
+                        <div class="grid grid-cols-2 gap-2 h-24">
+                          <div class="bg-white dark:bg-gray-800 p-2 rounded border border-gray-200 dark:border-gray-700 flex flex-col">
+                            <div class="h-3 w-2/3 bg-gray-200 dark:bg-gray-800/40 rounded mb-1"></div>
+                            <div class="flex-1 flex items-center justify-center">
+                              <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">24</div>
+                            </div>
+                          </div>
+                          <div class="bg-white dark:bg-gray-800 p-2 rounded border border-gray-200 dark:border-gray-700 flex flex-col">
+                            <div class="h-3 w-2/3 bg-gray-200 dark:bg-gray-800/40 rounded mb-1"></div>
+                            <div class="flex-1 flex items-center justify-center">
+                              <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">68%</div>
+                            </div>
+                          </div>
+                          <div class="bg-white dark:bg-gray-800 p-2 rounded border border-gray-200 dark:border-gray-700 flex flex-col">
+                            <div class="h-3 w-2/3 bg-gray-200 dark:bg-gray-800/40 rounded mb-1"></div>
+                            <div class="flex-1 flex items-center justify-center">
+                              <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">95+</div>
+                            </div>
+                          </div>
+                          <div class="bg-white dark:bg-gray-800 p-2 rounded border border-gray-200 dark:border-gray-700 flex flex-col">
+                            <div class="h-3 w-2/3 bg-gray-200 dark:bg-gray-800/40 rounded mb-1"></div>
+                            <div class="flex-1 flex items-center justify-center">
+                              <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">+42%</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2">
+            <div class="px-6 py-3 rounded-full text-sm font-medium bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow-lg border border-blue-100 dark:border-blue-800/30 text-blue-800 dark:text-blue-300">
+              אימון עובדים • ייעול תהליכים • מערכות AI מתקדמות
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 bg-gradient-to-b from-gray-50/50 to-white dark:from-gray-900 dark:to-gray-950 transition-colors duration-300">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-16 animate-on-scroll">
+        <div class="inline-block mb-4">
+          <div class="px-4 py-2 bg-blue-100 dark:bg-blue-900/40 rounded-full text-sm font-medium text-blue-800 dark:text-blue-300 border border-blue-200 dark:border-blue-800/50">
+            השירותים שלנו
+          </div>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-gray-900 dark:text-white">
+          פתרונות <span class="text-blue-600 dark:text-blue-400">AI</span> מותאמים לצרכי העסק שלך
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          אנו מתמחים בהטמעת טכנולוגיות בינה מלאכותית שמובילות לתוצאות עסקיות אמיתיות.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Service Card 1 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300 animate-on-scroll">
+          <div class="bg-gradient-to-r from-blue-500 to-gray-600 h-2"></div>
+          <div class="p-6">
+            <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-users text-xl text-blue-600 dark:text-blue-400"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">הכשרה והדרכת עובדים</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              סדנאות והדרכות מעשיות לשימוש יעיל בכלי AI, מהדרכות פרונטליות ועד קורסים מקוונים מותאמים אישית.
+            </p>
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check text-green-500 mt-1"></i>
+                <span class="text-gray-600 dark:text-gray-300">מיפוי תהליכים ואיתור הזדמנויות לאוטומציה</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check text-green-500 mt-1"></i>
+                <span class="text-gray-600 dark:text-gray-300">שילוב מערכות AI בתוך תהליכי עבודה קיימים</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check text-green-500 mt-1"></i>
+                <span class="text-gray-600 dark:text-gray-300">ניתוח נתונים לקבלת החלטות מבוססות מידע</span>
+              </li>
+            </ul>
+            <a href="#contact" class="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium">
+              למד עוד
+              <i class="fas fa-arrow-left mr-1 text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300 animate-on-scroll">
+          <div class="bg-gradient-to-r from-gray-500 to-blue-600 h-2"></div>
+          <div class="p-6">
+            <div class="w-12 h-12 bg-gray-100 dark:bg-gray-900/30 rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-brain text-xl text-gray-600 dark:text-gray-400"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">פיתוח מערכות AI מתקדמות</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              תכנון ופיתוח פתרונות AI מתקדמים המותאמים לצרכים הספציפיים של העסק, מצ'אטבוטים ועד מערכות אנליטיקה.
+            </p>
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check text-green-500 mt-1"></i>
+                <span class="text-gray-600 dark:text-gray-300">בניית צ'אטבוטים חכמים לשירות לקוחות</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check text-green-500 mt-1"></i>
+                <span class="text-gray-600 dark:text-gray-300">מערכות ניתוח טקסט וזיהוי מגמות</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check text-green-500 mt-1"></i>
+                <span class="text-gray-600 dark:text-gray-300">מערכות המלצות וחיזוי לצרכי העסק</span>
+              </li>
+            </ul>
+            <a href="#contact" class="inline-flex items-center text-gray-600 dark:text-gray-400 font-medium">
+              למד עוד
+              <i class="fas fa-arrow-left mr-1 text-sm"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section id="why-us" class="py-20 bg-gradient-to-b from-white to-gray-50/50 dark:from-gray-950 dark:to-gray-900 transition-colors duration-300">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-16 animate-on-scroll">
+        <div class="inline-block mb-4">
+          <div class="px-4 py-2 bg-blue-100 dark:bg-blue-900/40 rounded-full text-sm font-medium text-blue-800 dark:text-blue-300 border border-blue-200 dark:border-blue-800/50">
+            למה לבחור בנו
+          </div>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-gray-900 dark:text-white">
+          המומחיות שלנו, <span class="text-blue-600 dark:text-blue-400">ההצלחה</span> שלך
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          אנו מביאים ניסיון מוכח בהטמעת AI בעסקים מכל הגדלים וענפי התעשייה.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <!-- Stat Card 1 -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 animate-on-scroll flex flex-col items-center text-center">
+          <div class="mb-4 p-3 rounded-full bg-blue-100 dark:bg-blue-900/30">
+            <i class="fas fa-chart-line text-xl text-blue-600 dark:text-blue-400"></i>
+          </div>
+          <div class="text-3xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-gray-600 dark:from-blue-500 dark:to-gray-400">+40%</div>
+          <div class="font-medium text-gray-900 dark:text-white mb-2">עלייה בפרודוקטיביות</div>
+          <p class="text-sm text-gray-500 dark:text-gray-400">לקוחותינו מדווחים על עלייה משמעותית ביעילות לאחר הטמעת פתרונות ה-AI</p>
+        </div>
+
+        <!-- Stat Card 2 -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 animate-on-scroll flex flex-col items-center text-center">
+          <div class="mb-4 p-3 rounded-full bg-gray-100 dark:bg-gray-900/30">
+            <i class="fas fa-clock text-xl text-gray-600 dark:text-gray-400"></i>
+          </div>
+          <div class="text-3xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-gray-600 to-blue-600 dark:from-gray-500 dark:to-blue-400">60%</div>
+          <div class="font-medium text-gray-900 dark:text-white mb-2">חיסכון בזמן</div>
+          <p class="text-sm text-gray-500 dark:text-gray-400">אוטומציה של משימות חוזרות מאפשרת לעובדים להתמקד במשימות בעלות ערך גבוה</p>
+        </div>
+
+        <!-- Stat Card 3 -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 animate-on-scroll flex flex-col items-center text-center">
+          <div class="mb-4 p-3 rounded-full bg-blue-100 dark:bg-blue-900/30">
+            <i class="fas fa-project-diagram text-xl text-blue-600 dark:text-blue-400"></i>
+          </div>
+          <div class="text-3xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-gray-600 dark:from-blue-500 dark:to-gray-400">100+</div>
+          <div class="font-medium text-gray-900 dark:text-white mb-2">פרויקטים מוצלחים</div>
+          <p class="text-sm text-gray-500 dark:text-gray-400">שיתפנו פעולה עם מגוון רחב של עסקים להטמעת פתרונות AI מותאמים אישית</p>
+        </div>
+
+        <!-- Stat Card 4 -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 animate-on-scroll flex flex-col items-center text-center">
+          <div class="mb-4 p-3 rounded-full bg-gray-100 dark:bg-gray-900/30">
+            <i class="fas fa-coins text-xl text-gray-600 dark:text-gray-400"></i>
+          </div>
+          <div class="text-3xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-gray-600 to-blue-600 dark:from-gray-500 dark:to-blue-400">25%</div>
+          <div class="font-medium text-gray-900 dark:text-white mb-2">צמיחה בהכנסות</div>
+          <p class="text-sm text-gray-500 dark:text-gray-400">לקוחותינו נהנים מצמיחה משמעותית בהכנסות בזכות פתרונות AI חדשניים</p>
+        </div>
+      </div>
+
+      <div class="mt-16 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <!-- Image/Illustration -->
+          <div class="animate-on-scroll">
+            <div class="aspect-square max-w-md mx-auto bg-gradient-to-br from-blue-50 to-gray-50 dark:from-blue-900/20 dark:to-gray-900/20 rounded-2xl overflow-hidden border border-blue-200/40 dark:border-blue-700/40 shadow-xl relative">
+              <div class="absolute inset-4 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+                <div class="grid grid-cols-2 gap-4 h-full">
+                  <div class="col-span-2 flex items-center justify-center mb-4">
+                    <div class="h-16 w-16 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                      <i class="fas fa-brain text-2xl text-blue-600 dark:text-blue-400"></i>
+                    </div>
+                    <div class="mr-4">
+                      <div class="h-6 w-32 bg-blue-200 dark:bg-blue-800/40 rounded mb-2"></div>
+                      <div class="h-4 w-40 bg-gray-200 dark:bg-gray-700 rounded"></div>
+                    </div>
+                  </div>
+
+                  <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-4 flex flex-col items-center justify-center">
+                    <div class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-900/30 flex items-center justify-center mb-3">
+                      <i class="fas fa-users text-gray-600 dark:text-gray-400"></i>
+                    </div>
+                    <div class="h-4 w-24 bg-gray-200 dark:bg-gray-800/40 rounded mb-2"></div>
+                    <div class="h-3 w-full bg-gray-200 dark:bg-gray-700 rounded mb-1"></div>
+                    <div class="h-3 w-4/5 bg-gray-200 dark:bg-gray-700 rounded"></div>
+                  </div>
+
+                  <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-4 flex flex-col items-center justify-center">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-3">
+                      <i class="fas fa-graduation-cap text-blue-600 dark:text-blue-400"></i>
+                    </div>
+                    <div class="h-4 w-20 bg-blue-200 dark:bg-blue-800/40 rounded mb-2"></div>
+                    <div class="h-3 w-full bg-gray-200 dark:bg-gray-700 rounded mb-1"></div>
+                    <div class="h-3 w-4/5 bg-gray-200 dark:bg-gray-700 rounded"></div>
+                  </div>
+
+                  <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-4 flex flex-col items-center justify-center">
+                    <div class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-900/30 flex items-center justify-center mb-3">
+                      <i class="fas fa-cogs text-gray-600 dark:text-gray-400"></i>
+                    </div>
+                    <div class="h-4 w-24 bg-gray-200 dark:bg-gray-800/40 rounded mb-2"></div>
+                    <div class="h-3 w-full bg-gray-200 dark:bg-gray-700 rounded mb-1"></div>
+                    <div class="h-3 w-4/5 bg-gray-200 dark:bg-gray-700 rounded"></div>
+                  </div>
+
+                  <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-4 flex flex-col items-center justify-center">
+                    <div class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-900/30 flex items-center justify-center mb-3">
+                      <i class="fas fa-chart-pie text-gray-600 dark:text-gray-400"></i>
+                    </div>
+                    <div class="h-4 w-20 bg-gray-200 dark:bg-gray-800/40 rounded mb-2"></div>
+                    <div class="h-3 w-full bg-gray-200 dark:bg-gray-700 rounded mb-1"></div>
+                    <div class="h-3 w-4/5 bg-gray-200 dark:bg-gray-700 rounded"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="space-y-6 animate-on-scroll">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">הצוות המקצועי שלנו</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              הצוות שלנו מורכב ממומחי AI מנוסים שעובדים יחד כדי לספק את הפתרונות הטובים ביותר לאתגרים הייחודיים של העסק שלך.
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></div>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900 dark:text-white">מומחיות מקצועית</h4>
+                  <p class="text-gray-600 dark:text-gray-300">צוות המומחים שלנו מביא ניסיון עשיר בטכנולוגיות AI ויישומן בעולם העסקי.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></div>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900 dark:text-white">גישה מותאמת אישית</h4>
+                  <p class="text-gray-600 dark:text-gray-300">אנו מתאימים את הפתרונות לצרכים הספציפיים של העסק שלך, ללא פתרונות "אחד מתאים לכולם".</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></div>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900 dark:text-white">ליווי לאורך כל הדרך</h4>
+                  <p class="text-gray-600 dark:text-gray-300">אנו מלווים אותך בכל שלב, מהאפיון הראשוני ועד להטמעה המלאה וההדרכה.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></div>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900 dark:text-white">תוצאות מדידות</h4>
+                  <p class="text-gray-600 dark:text-gray-300">אנו מתמקדים בתוצאות עסקיות מדידות ומספקים כלים למעקב והערכת ההצלחה.</p>
+                </div>
+              </li>
+            </ul>
+            <div class="pt-4">
+              <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-blue-600 to-gray-600 hover:from-blue-700 hover:to-gray-700 dark:from-blue-500 dark:to-gray-500 shadow-md hover:shadow-lg transition-all">
+                צור קשר עכשיו
+                <i class="fas fa-arrow-left mr-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section id="process" class="py-20 bg-gradient-to-b from-gray-50/50 to-white dark:from-gray-900 dark:to-gray-950 transition-colors duration-300">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-16 animate-on-scroll">
+        <div class="inline-block mb-4">
+          <div class="px-4 py-2 bg-blue-100 dark:bg-blue-900/40 rounded-full text-sm font-medium text-blue-800 dark:text-blue-300 border border-blue-200 dark:border-blue-800/50">
+            תהליך העבודה שלנו
+          </div>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-gray-900 dark:text-white">
+          מאבחנים, מתכננים, <span class="text-blue-600 dark:text-blue-400">מטמיעים</span>
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          תהליך מובנה ומוכח להטמעת פתרונות AI שמבטיח הצלחה לטווח ארוך.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto">
+        <!-- Timeline Steps -->
+        <div class="space-y-12">
+          <!-- Step 1 -->
+          <div class="flex flex-col md:flex-row gap-8 animate-on-scroll">
+            <div class="md:w-1/3 flex flex-col items-center md:items-start">
+              <div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-lg mb-4">1</div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">אבחון וניתוח צרכים</h3>
+              <p class="text-gray-600 dark:text-gray-300 text-center md:text-right">
+                מיפוי תהליכים קיימים, זיהוי אתגרים והזדמנויות לשילוב AI
+              </p>
+            </div>
+            <div class="md:w-2/3 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md border border-gray-200 dark:border-gray-700">
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-search text-blue-600 dark:text-blue-400 mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-gray-900 dark:text-white">ניתוח מעמיק של העסק</h4>
+                    <p class="text-gray-600 dark:text-gray-300">אנו מבצעים ניתוח מקיף של תהליכי העבודה, מערכות קיימות והאתגרים העסקיים.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-comments text-blue-600 dark:text-blue-400 mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-gray-900 dark:text-white">ראיונות עם בעלי תפקידים</h4>
+                    <p class="text-gray-600 dark:text-gray-300">אנו מקיימים שיחות עם אנשי מפתח בארגון להבנת הצרכים והאתגרים השונים.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-file-alt text-blue-600 dark:text-blue-400 mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-gray-900 dark:text-white">דו"ח מסכם והמלצות</h4>
+                    <p class="text-gray-600 dark:text-gray-300">בסיום השלב הראשון, אנו מגישים מסמך מפורט עם כל הממצאים וההמלצות הראשוניות.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex flex-col md:flex-row gap-8 animate-on-scroll">
+            <div class="md:w-1/3 flex flex-col items-center md:items-start">
+              <div class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-900/30 flex items-center justify-center text-gray-600 dark:text-gray-400 font-bold text-lg mb-4">2</div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">תכנון אסטרטגי</h3>
+              <p class="text-gray-600 dark:text-gray-300 text-center md:text-right">
+                פיתוח אסטרטגיה מותאמת אישית לשילוב AI והכנת תוכנית עבודה
+              </p>
+            </div>
+            <div class="md:w-2/3 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md border border-gray-200 dark:border-gray-700">
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-map text-gray-600 dark:text-gray-400 mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-gray-900 dark:text-white">מפת דרכים להטמעת AI</h4>
+                    <p class="text-gray-600 dark:text-gray-300">יצירת מפת דרכים מפורטת עם אבני דרך ברורות להטמעה הדרגתית של פתרונות AI.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-tools text-gray-600 dark:text-gray-400 mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-gray-900 dark:text-white">בחירת כלים וטכנולוגיות</h4>
+                    <p class="text-gray-600 dark:text-gray-300">מיפוי וסקירה של הכלים והטכנולוגיות המתאימים ביותר לצרכי הארגון.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-chart-line text-gray-600 dark:text-gray-400 mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-gray-900 dark:text-white">הגדרת מדדי הצלחה</h4>
+                    <p class="text-gray-600 dark:text-gray-300">קביעת KPIs ומדדי הצלחה ברורים למדידת אפקטיביות הפתרונות והחזר ההשקעה.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex flex-col md:flex-row gap-8 animate-on-scroll">
+            <div class="md:w-1/3 flex flex-col items-center md:items-start">
+              <div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-lg mb-4">3</div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">יישום והטמעה</h3>
+              <p class="text-gray-600 dark:text-gray-300 text-center md:text-right">
+                פיתוח, התאמה והטמעת פתרונות AI בליווי צמוד
+              </p>
+            </div>
+            <div class="md:w-2/3 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md border border-gray-200 dark:border-gray-700">
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-code text-blue-600 dark:text-blue-400 mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-gray-900 dark:text-white">פיתוח והתאמה אישית</h4>
+                    <p class="text-gray-600 dark:text-gray-300">פיתוח או התאמה של פתרונות AI לצרכים הספציפיים של הארגון.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-user-cog text-blue-600 dark:text-blue-400 mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-gray-900 dark:text-white">הכשרת משתמשים</h4>
+                    <p class="text-gray-600 dark:text-gray-300">הדרכות מקיפות לעובדים על השימוש בכלים החדשים והטמעתם בעבודה היומיומית.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-sync-alt text-blue-600 dark:text-blue-400 mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-gray-900 dark:text-white">הטמעה הדרגתית</h4>
+                    <p class="text-gray-600 dark:text-gray-300">תהליך הטמעה מדורג עם מעקב צמוד וביצוע התאמות נדרשות בזמן אמת.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="flex flex-col md:flex-row gap-8 animate-on-scroll">
+            <div class="md:w-1/3 flex flex-col items-center md:items-start">
+              <div class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-900/30 flex items-center justify-center text-gray-600 dark:text-gray-400 font-bold text-lg mb-4">4</div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">מדידה ואופטימיזציה</h3>
+              <p class="text-gray-600 dark:text-gray-300 text-center md:text-right">
+                ניטור, מדידת תוצאות וביצוע שיפורים מתמשכים
+              </p>
+            </div>
+            <div class="md:w-2/3 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md border border-gray-200 dark:border-gray-700">
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-chart-bar text-gray-600 dark:text-gray-400 mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-gray-900 dark:text-white">ניטור ביצועים</h4>
+                    <p class="text-gray-600 dark:text-gray-300">מעקב שוטף אחר ביצועי המערכות ומדידת השפעתן על מדדי העסק.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-sliders-h text-gray-600 dark:text-gray-400 mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-gray-900 dark:text-white">אופטימיזציה מתמדת</h4>
+                    <p class="text-gray-600 dark:text-gray-300">זיהוי הזדמנויות לשיפור וביצוע התאמות למקסום התוצאות.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-arrows-alt text-gray-600 dark:text-gray-400 mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-gray-900 dark:text-white">הרחבה והעמקה</h4>
+                    <p class="text-gray-600 dark:text-gray-300">הרחבת השימוש בפתרונות AI לתחומים נוספים והעמקת היישום הקיים.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-20 bg-gradient-to-b from-white to-gray-50/50 dark:from-gray-950 dark:to-gray-900 transition-colors duration-300">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-16 animate-on-scroll">
+        <div class="inline-block mb-4">
+          <div class="px-4 py-2 bg-blue-100 dark:bg-blue-900/40 rounded-full text-sm font-medium text-blue-800 dark:text-blue-300 border border-blue-200 dark:border-blue-800/50">
+            הלקוחות שלנו מספרים
+          </div>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-gray-900 dark:text-white">
+          סיפורי <span class="text-blue-600 dark:text-blue-400">הצלחה</span>
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          ראה איך עסקים אחרים כבר הצליחו לשפר את הביצועים שלהם באמצעות הפתרונות שלנו.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <!-- Testimonial 1 -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 animate-on-scroll">
+          <div class="mb-4 text-blue-600 dark:text-blue-400">
+            <i class="fas fa-quote-right text-2xl"></i>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 mb-6">
+            "הצוות של AI יועצים עזר לנו להטמיע מערכת צ'אטבוט מבוססת AI שהפחיתה את זמני המענה ללקוחות ב-70% והעלתה את שביעות רצון הלקוחות בצורה דרמטית."
+          </p>
+          <div>
+            <div class="font-medium text-gray-900 dark:text-white">יעל לוין</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">סמנכ"לית שירות, רשת קמעונאית</div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 animate-on-scroll">
+          <div class="mb-4 text-gray-600 dark:text-gray-400">
+            <i class="fas fa-quote-right text-2xl"></i>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 mb-6">
+            "ההדרכות שקיבלנו על שימוש בכלי AI לניתוח נתונים שיפרו את יכולת קבלת ההחלטות שלנו והובילו לגידול של 35% במכירות תוך חצי שנה."
+          </p>
+          <div>
+            <div class="font-medium text-gray-900 dark:text-white">דוד כהן</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">מנהל מכירות, חברת טכנולוגיה</div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 animate-on-scroll">
+          <div class="mb-4 text-blue-600 dark:text-blue-400">
+            <i class="fas fa-quote-right text-2xl"></i>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 mb-6">
+            "המערכת שפיתחו עבורנו לניטור ואנליזה של תהליכי הייצור הפחיתה את זמני ההשבתה ב-45% והעלתה את התפוקה הכוללת ב-20%."
+          </p>
+          <div>
+            <div class="font-medium text-gray-900 dark:text-white">מיכאל אברהם</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">מנהל תפעול, מפעל תעשייתי</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Logos -->
+      <div class="mt-20 animate-on-scroll">
+        <p class="text-center text-gray-500 dark:text-gray-400 mb-10 text-sm font-medium uppercase tracking-wider">לקוחות שסומכים עלינו</p>
+        <div class="flex flex-wrap justify-center gap-8 md:gap-16 max-w-4xl mx-auto">
+          <div class="h-10 w-24 bg-gray-300/30 dark:bg-gray-700/30 rounded-md flex items-center justify-center">
+            <div class="text-gray-500 dark:text-gray-400">לוגו 1</div>
+          </div>
+          <div class="h-10 w-24 bg-gray-300/30 dark:bg-gray-700/30 rounded-md flex items-center justify-center">
+            <div class="text-gray-500 dark:text-gray-400">לוגו 2</div>
+          </div>
+          <div class="h-10 w-24 bg-gray-300/30 dark:bg-gray-700/30 rounded-md flex items-center justify-center">
+            <div class="text-gray-500 dark:text-gray-400">לוגו 3</div>
+          </div>
+          <div class="h-10 w-24 bg-gray-300/30 dark:bg-gray-700/30 rounded-md flex items-center justify-center">
+            <div class="text-gray-500 dark:text-gray-400">לוגו 4</div>
+          </div>
+          <div class="h-10 w-24 bg-gray-300/30 dark:bg-gray-700/30 rounded-md flex items-center justify-center">
+            <div class="text-gray-500 dark:text-gray-400">לוגו 5</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gradient-to-br from-blue-100 to-gray-100 dark:from-blue-900/30 dark:to-gray-900/30 transition-colors duration-300 border-t border-blue-200 dark:border-blue-800/30">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
+          <div class="grid grid-cols-1 md:grid-cols-2">
+            <div class="p-8 md:p-12 bg-gradient-to-br from-blue-600 to-gray-700 dark:from-blue-700 dark:to-gray-800 text-white">
+              <h3 class="text-2xl font-bold mb-6">צור קשר</h3>
+              <p class="mb-8">
+                מוכנים להרים את העסק שלכם לרמה הבאה עם פתרונות AI חדשניים? השאירו פרטים ונחזור אליכם בהקדם.
+              </p>
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-phone text-gray-300 mt-1"></i>
+                  <div>
+                    <h4 class="font-medium">טלפון</h4>
+                    <p class="text-gray-100">03-1234567</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-envelope text-gray-300 mt-1"></i>
+                  <div>
+                    <h4 class="font-medium">אימייל</h4>
+                    <p class="text-gray-100">info@ai-yoatzim.co.il</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-map-marker-alt text-gray-300 mt-1"></i>
+                  <div>
+                    <h4 class="font-medium">כתובת</h4>
+                    <p class="text-gray-100">רחוב הטכנולוגיה 15, תל אביב</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-12 pt-8 border-t border-gray-500/30">
+                <h4 class="font-medium mb-4">עקבו אחרינו</h4>
+                <div class="flex space-x-4 space-x-reverse rtl:space-x-reverse">
+                  <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
+                    <i class="fab fa-facebook-f text-white"></i>
+                  </a>
+                  <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
+                    <i class="fab fa-linkedin-in text-white"></i>
+                  </a>
+                  <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
+                    <i class="fab fa-twitter text-white"></i>
+                  </a>
+                  <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
+                    <i class="fab fa-instagram text-white"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="p-8 md:p-12">
+              <form class="space-y-6">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">שם מלא</label>
+                  <input type="text" id="name" class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent outline-none transition-colors" placeholder="השם שלך">
+                </div>
+
+                <div>
+                  <label for="company" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">שם החברה</label>
+                  <input type="text" id="company" class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent outline-none transition-colors" placeholder="שם החברה שלך">
+                </div>
+
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">אימייל</label>
+                  <input type="email" id="email" class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent outline-none transition-colors" placeholder="האימייל שלך">
+                </div>
+
+                <div>
+                  <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">טלפון</label>
+                  <input type="tel" id="phone" class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent outline-none transition-colors" placeholder="מספר הטלפון שלך">
+                </div>
+
+                <div>
+                  <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">הודעה</label>
+                  <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent outline-none transition-colors" placeholder="כיצד נוכל לעזור לך?"></textarea>
+                </div>
+
+                <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-blue-600 to-gray-600 hover:from-blue-700 hover:to-gray-700 dark:from-blue-500 dark:to-gray-500 shadow-md hover:shadow-lg transition-all">
+                  שלח הודעה
+                  <i class="fas fa-paper-plane mr-2"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div class="space-y-4">
+          <a href="#" class="flex items-center gap-2">
+            <i class="fas fa-robot text-blue-600 dark:text-blue-400"></i>
+            <span class="text-xl font-semibold">
+              AI<span class="text-blue-600 dark:text-blue-400">יועצים</span>
+            </span>
+          </a>
+          <p class="text-sm text-gray-500 dark:text-gray-400">
+            מלווים עסקים בהטמעת פתרונות בינה מלאכותית מתקדמים לשיפור היעילות, הפרודוקטיביות והרווחיות.
+          </p>
+          <div class="flex space-x-4 space-x-reverse rtl:space-x-reverse">
+            <a href="#" class="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-4">שירותים</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="#" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                הכשרה והדרכת עובדים
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                ייעול תהליכים עסקיים
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                פיתוח מערכות AI
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                ייעוץ אסטרטגי
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                ניתוח נתונים
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-4">המדריכים שלנו</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="#" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                מדריך לשימוש ב-ChatGPT
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                אוטומציה של תהליכי עבודה
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                יסודות הבינה המלאכותית לעסקים
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                כתיבת פרומפטים אפקטיביים
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                AI לשיווק ומכירות
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-4">צור קשר</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <i class="fas fa-map-marker-alt text-blue-600 dark:text-blue-400 mt-1"></i>
+              <span class="text-sm text-gray-600 dark:text-gray-400">
+                רחוב הטכנולוגיה 15, תל אביב
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-phone text-blue-600 dark:text-blue-400 mt-1"></i>
+              <span class="text-sm text-gray-600 dark:text-gray-400">
+                03-1234567
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-envelope text-blue-600 dark:text-blue-400 mt-1"></i>
+              <span class="text-sm text-gray-600 dark:text-gray-400">
+                info@ai-yoatzim.co.il
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-clock text-blue-600 dark:text-blue-400 mt-1"></i>
+              <span class="text-sm text-gray-600 dark:text-gray-400">
+                ימים א'-ה': 9:00-18:00
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
+        <p class="text-sm text-gray-500 dark:text-gray-400 text-center">
+          © 2025 AI יועצים. כל הזכויות שמורות.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button id="back-to-top" class="fixed bottom-6 left-6 w-12 h-12 rounded-full bg-blue-600 dark:bg-blue-700 text-white shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-blue-700 dark:hover:bg-blue-600">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script>
+    // Toggle theme
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // Close mobile menu if open
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+        }
+
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -10% 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-slide-up');
+          entry.target.classList.remove('opacity-0', 'translate-y-8');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      el.classList.add('opacity-0', 'translate-y-8');
+      el.classList.add('transition-all', 'duration-700', 'ease-apple');
+      observer.observe(el);
+    });
+
+    // Back to top button
+    const backToTopBtn = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.remove('opacity-0', 'invisible');
+        backToTopBtn.classList.add('opacity-100', 'visible');
+      } else {
+        backToTopBtn.classList.add('opacity-0', 'invisible');
+        backToTopBtn.classList.remove('opacity-100', 'visible');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>
